@@ -5,7 +5,7 @@ module.exports = (req, res) => {
   const id = parseInt(req.params.id);
   database
     .query(
-      'update album set title = ?, youtube_url = ?, id_album = ? where id = ?',
+      'update track set title = ?, youtube_url = ?, id_album = ? where id = ?',
       [title, youtube_url, id_album, id]
     )
     .then(([result]) => {
