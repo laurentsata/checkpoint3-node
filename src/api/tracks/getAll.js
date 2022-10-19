@@ -1,4 +1,6 @@
-const getTracks = (req, res) => {
+const database = require('../database');
+
+module.exports = (req, res) => {
   database
     .query('select * from album')
     .then(([track]) => {
@@ -8,8 +10,4 @@ const getTracks = (req, res) => {
       console.error(err);
       res.status(500).send('Error retrieving data from database');
     });
-};
-
-module.exports = {
-  getTracks,
 };

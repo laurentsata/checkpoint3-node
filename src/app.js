@@ -23,26 +23,4 @@ app.use('/api', api);
 app.use(notFound);
 app.use(errorHandler);
 
-const port = process.env.APP_PORT ?? 8000;
-
-const welcome = (req, res) => {
-  res.send('Welcome to my favourite albums !!!');
-};
-
-app.get('/', welcome);
-
-app.get('/api/albums', albums.getAlbums);
-app.get('/api/albums/:id', albums.getAlbumById);
-app.post('/api/albums', albums.postAlbum);
-
-app.get('/api/tracks', tracks.getTracks);
-app.get('/api/tracks/:id', tracks.getTrackById);
-app.post('/api/tracks', tracks.postTrack);
-
-app.listen(port, (err) => {
-  if (err) {
-    console.error('Something bad happened');
-  } else {
-    console.log(`Server is listening on ${port}`);
-  }
-});
+module.exports = app;

@@ -1,6 +1,7 @@
 const database = require('../database.js');
 
 module.exports = (req, res) => {
+  const id = parseInt(req.params.id);
   database
     .query('select * from album where id = ?', [id])
     .then(([album]) => {
@@ -16,6 +17,3 @@ module.exports = (req, res) => {
     });
 };
 
-module.exports = {
-  getAlbumById,
-};

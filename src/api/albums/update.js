@@ -1,3 +1,22 @@
+const database = require('../database');
+
 module.exports = (req, res) => {
-  // your code here !
+  const { title, genre, picture, artist } = req.body;
+  const id = parseInt(req.params.id);
+  database
+    .query(
+      'update album set title = ?, genre = ?, picture = ?, artist = ? where id = ?',
+      [title, genre, picture, artist, id]
+    )
+    .then(([result]) => {
+      if (result.affectedRows === 0) {
+        res.status(404).send('Not Found');
+      } else {
+        res.sendStatus(204);
+      }
+    })
+    .catch((err) => {
+      console.error(err);
+      res.status(500).send('Error editing the album');
+    });
 };
