@@ -1,8 +1,8 @@
-const database = require('../database');
+const database = require('../database.js');
 
 module.exports = (req, res) => {
   database
-    .query('select * from album')
+    .query('select * from track')
     .then(([track]) => {
       res.json(track);
     })
@@ -11,3 +11,4 @@ module.exports = (req, res) => {
       res.status(500).send('Error retrieving data from database');
     });
 };
+
