@@ -35,6 +35,10 @@ app.get("/api/albums", albums.getAlbums);
 app.get("/api/albums/:id", albums.getAlbumById);
 app.post("/api/albums", albums.postAlbum);
 
+app.get("/api/tracks", tracks.getTracks);
+app.get("/api/tracks/:id", tracks.getTrackById);
+app.post("/api/tracks", tracks.postTrack);
+
 app.listen(port, (err) => {
   if (err) {
     console.error("Something bad happened");
