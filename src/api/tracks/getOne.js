@@ -17,6 +17,6 @@ const getTrackById = (req, res) => {
 };
 
 
-module.exports = (req, res) => {
+module.exports =  {
   getTrackById,
 };

@@ -1,4 +1,6 @@
-const getAlbums = (req, res) => {
+const database = require('../database.js');
+
+module.exports = (req, res) => {
   database
     .query('select * from album')
     .then(([album]) => {
@@ -11,6 +13,6 @@ const getAlbums = (req, res) => {
 };
 
 
-module.exports = (req, res) => {
-  getAlbums,
-};
+// module.exports = (req, res) => {
+//   getAlbums,
+// };

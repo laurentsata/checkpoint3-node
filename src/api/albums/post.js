@@ -8,7 +8,7 @@ const postAlbum = (req, res) => {
       [title, genre, picture, artist]
     )
     .then(([result]) => {
-      res.location(`/api/album/${result.insertId}`).sendStatus(201); //***https://www.restapitutorial.com/lessons/httpmethods.html ***
+      res.location(`/api/album/${result.insertId}`).sendStatus("201 created"); //***https://www.restapitutorial.com/lessons/httpmethods.html ***
     })
     .catch((err) => {
       console.error(err);
@@ -17,6 +17,6 @@ const postAlbum = (req, res) => {
 };
 
 
-module.exports = (req, res) => {
+module.exports = {
   postAlbum,
 };

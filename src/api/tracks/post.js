@@ -8,7 +8,7 @@ const postTrack = (req, res) => {
       [title, youtube_url, id_album]
     )
     .then(([result]) => {
-      res.location(`/api/track/${result.insertId}`).sendStatus(201); //***https://www.restapitutorial.com/lessons/httpmethods.html ***
+      res.location(`/api/track/${result.insertId}`).sendStatus("201 created"); //***https://www.restapitutorial.com/lessons/httpmethods.html ***
     })
     .catch((err) => {
       console.error(err);
@@ -17,6 +17,6 @@ const postTrack = (req, res) => {
 };
 
 
-module.exports = (req, res) => {
+module.exports = {
   postTrack,
 };
